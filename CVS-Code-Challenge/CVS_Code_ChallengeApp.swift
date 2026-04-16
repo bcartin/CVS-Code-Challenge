@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CVS_Code_ChallengeApp: App {
+    
+    @State private var networkService = NetworkService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(viewModel: HomeViewModel(networkService: networkService))
         }
     }
 }

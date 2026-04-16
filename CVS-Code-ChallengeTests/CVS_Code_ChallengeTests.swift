@@ -9,23 +9,30 @@ import XCTest
 @testable import CVS_Code_Challenge
 
 final class CVS_Code_ChallengeTests: XCTestCase {
+    
+    let networkService: any NetworkServiceProtocol
+    var sut: HomeViewModel
+    
+    override init() {
+        super.init()
+        self.networkService = NetworkServiceMock()
+        //MARK: Not sure why i'm getting an error here, NetworkServiceMock clearly confors to NetworkServiceProtocol.
+        sut = HomeViewModel(networkService: networkService)
+    }
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
+    @MainActor func testExample() throws {
+        sut.searchText = "rick"
+        let results = sut.results
+        XCTAssertFalse(results.isEmpty)
+        XCTAssertEqual(results.count, 2)
     }
 
     func testPerformanceExample() throws {

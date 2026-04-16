@@ -29,9 +29,25 @@
 		CB4BBF512F910F7B004F8C51 /* CVS-Code-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CVS-Code-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CB4BC2172F912CC6004F8C51 /* Exceptions for "CVS-Code-Challenge" folder in "CVS-Code-ChallengeTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/Character.swift,
+				Models/Info.swift,
+				Models/Response.swift,
+				Services/NetworkService.swift,
+			);
+			target = CB4BBF462F910F7B004F8C51 /* CVS-Code-ChallengeTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CB4BBF3C2F910F79004F8C51 /* CVS-Code-Challenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CB4BC2172F912CC6004F8C51 /* Exceptions for "CVS-Code-Challenge" folder in "CVS-Code-ChallengeTests" target */,
+			);
 			path = "CVS-Code-Challenge";
 			sourceTree = "<group>";
 		};
